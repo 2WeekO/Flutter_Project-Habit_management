@@ -62,7 +62,6 @@ class _BetterHabitAppState extends State<BetterHabitApp> {
             label: '',
           ),
           NavigationDestination(
-            //selectedIcon: Icon(Icons.???),
             selectedIcon: Icon(Icons.checklist, color: Colors.black),
             icon: Icon(Icons.checklist, color: Colors.white),
             label: '',
