@@ -8,7 +8,6 @@ class HabitScreen extends StatefulWidget {
 }
 
 class _HabitScrrenState extends State<HabitScreen> {
-  int HomePageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
