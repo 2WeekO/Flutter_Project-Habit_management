@@ -1,0 +1,51 @@
+backgroundColor: Color.fromARGB(255, 39, 40, 59),
+      appBar: AppBar(
+        //AppBar 앱 상단 바
+        centerTitle: true,
+        title: Text('BETTER HABIT'),
+        backgroundColor: Color.fromARGB(0, 255, 255, 255),
+        elevation: 0.0,
+      ),
+
+
+
+
+
+int HomePageIndex = 0;
+
+onDestinationSelected: (int index) {  // 색상 및 아이콘 변경 필요
+          setState(() {
+            HomePageIndex = index;
+          });
+        },
+
+        selectedIndex: HomePageIndex,
+
+        destinations: const <Widget>[  //morning
+          NavigationDestination(
+            selectedIcon: Icon(Icons.flag, color: Colors.black),
+            icon: Icon(Icons.flag, color: Colors.white),
+            label: '',
+          ),
+          NavigationDestination(  //afternoon
+            selectedIcon: Icon(Icons.home, color: Colors.black),
+            icon: Icon(
+              Icons.home,
+              color: Colors.white,
+            ),
+            label: '',
+          ),
+          NavigationDestination(  //night
+            //selectedIcon: Icon(Icons.???),
+            selectedIcon: Icon(Icons.checklist, color: Colors.black),
+            icon: Icon(Icons.checklist, color: Colors.white),
+            label: '',
+          ),
+        ],
+
+
+        body: <Widget>[
+        const MorningPage(),
+        const AfternoonPage(),
+        const Nightpage(),
+      ][HomePageIndex],
