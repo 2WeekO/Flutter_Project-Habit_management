@@ -11,7 +11,47 @@ class _HabitScrrenState extends State<HabitScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      body: DefaultTabController(
+        length: 3,
+        child: Column(
+          children: <Widget>[
+            Container(
+              constraints: BoxConstraints.expand(height: 50),
+              child: TabBar(tabs: [
+                Tab(
+                  child: Text(
+                    'Morning',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Afternoon',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Night',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+              ]),
+            ),
+            Expanded(
+              child: Container(
+                child: TabBarView(children: [
+                  MorningPage(),
+                  AfternoonPage(),
+                  NightPage(),
+                ]),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
@@ -27,7 +67,9 @@ class MorningPage extends StatefulWidget {
 class _MorningPageState extends State<MorningPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Text('Morning Page'),
+    );
   }
 }
 //---------------MORNING PAGE <END>-------------------------
@@ -43,7 +85,9 @@ class AfternoonPage extends StatefulWidget {
 class _AfternoonPageState extends State<AfternoonPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      child: Text('Afternoon Page'),
+    );
   }
 }
 //---------------Afternoon PAGE <END>-------------------------
@@ -59,7 +103,9 @@ class NightPage extends StatefulWidget {
 class _NightPageState extends State<NightPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      child: Text('Night page'),
+    );
   }
 }
 //---------------NIGHT PAGE <END>-------------------------
